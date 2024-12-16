@@ -1,11 +1,12 @@
 #AI
-torch-directml==0.1.13.1.dev230413
+onnxruntime-directml==1.17.3
+numpy==1.26.4
 
 #GUI
 customtkinter
-packaging
 
 #UTILS
 moviepy
 opencv-python-headless
-nuitka
+natsort
+pyinstaller==6.11.0

@@ -17,23 +17,26 @@
     </div>
     <br>
     <div align="center">
-        <img src="https://github.com/Djdefrag/QualityScaler/assets/32263112/9aa539e6-9584-46c2-9af5-6b031bcb6823">
+        <img src="https://github.com/user-attachments/assets/16d1d2f6-1ffe-4ac5-863e-29058bdb6b9d">
     </div>
 </body>
 </html>
 
 
 ## What is QualityScaler?
-Qualityscaler is a Windows app powered by AI to enhance, enlarge and reduce noise in photographs and videos.
+Qualityscaler is a Windows app powered by AI to enhance, upscale and de-noise photographs and videos.
+
+## How to use QualityScaler?
+[movie_max_vp9.webm](https://github.com/user-attachments/assets/4a1984be-c8c8-464b-a3d1-43445635b165)
 
 ## Other AI projects.🤓
-- https://github.com/Djdefrag/RealESRScaler / RealScaler - image/video AI upscaler app (Real-ESRGAN)
-- https://github.com/Djdefrag/FluidFrames.RIFE / FluidFrames.RIFE - video AI frame generation app (RIFE-HDv3)
+- https://github.com/Djdefrag/RealScaler / RealScaler - image/video AI upscaler (Real-ESRGAN)
+- https://github.com/Djdefrag/FluidFrames.RIFE / FluidFrames.RIFE - video AI frame generation
 
 ## Credits.
 - BSRGAN - https://github.com/cszn/BSRGAN
 - Real-ESRGAN - https://github.com/xinntao/Real-ESRGAN
-- SAFMN - https://github.com/sunny2109/SAFMN
+- IRCNN - https://github.com/lipengFu/IRCNN
 
 ## Citations. ❤
 - https://80.lv/articles/80-level-digest-great-ai-powered-tools-for-upscaling-images/
@@ -41,11 +44,32 @@ Qualityscaler is a Windows app powered by AI to enhance, enlarge and reduce nois
 
 ## How is made. 🛠
 QualityScaler is completely written in Python, from backend to frontend. 
-External packages are:
-- AI  -> torch / torch-directml
-- GUI -> customtkinter
-- Image/video -> OpenCV / moviepy
-- Packaging   -> nuitka
+- [x] pytorch (https://github.com/pytorch/pytorch)
+- [x] onnx (https://github.com/onnx/onnx)
+- [x] onnxconverter-common (https://github.com/microsoft/onnxconverter-common)
+- [x] onnxruntime-directml (https://github.com/microsoft/onnxruntime)
+- [x] customtkinter (https://github.com/TomSchimansky/CustomTkinter)
+- [x] openCV (https://github.com/opencv/opencv)
+- [x] moviepy (https://github.com/Zulko/moviepy)
+- [x] pyInstaller (https://github.com/pyinstaller/pyinstaller)
+
+## Make it work by yourself. 👨‍💻
+Prerequisites.
+- Python installed on your pc (https://www.python.org/downloads/release/python-3119/)
+- VSCode installed on your pc (https://code.visualstudio.com/)
+- AI models downloaded (https://gofile.io/d/2RWnDU)
+- FFMPEG.exe downloaded (https://www.gyan.dev/ffmpeg/builds/) RELEASE BUILD > ffmpeg-release-essentials.7z
+
+Getting started.
+- Download the project on your PC (Green button Code > Download ZIP)
+- Extract the project from the .zip
+- Extract the AI models files in /AI-onnx folder
+- Extract FFMPEG.exe in /Assets folder
+- Open the project with VSCode (Drag&Drop the project directory on VSCode)
+- Click on QualityScaler.py from left bar (VSCode will ask to install Python plugins)
+- Install dependencies. In VSCode there is the "Terminal" panel, click there and execute the command "pip install -r requirements.txt"
+- Close VSCode and re-open it (this will refresh all the dependecies installed)
+- Click on the "Play button" in the upper right corner of VSCode
 
 ## Requirements. 🤓
 - Windows 11 / Windows 10
@@ -53,15 +77,16 @@ External packages are:
 - Any Directx12 compatible GPU with  >=  4GB VRAM
 
 ## Features.
-- [x] Easy to use GUI
-- [x] Images and Videos upscale
-- [x] Multiple AI models
-- [x] Automatic image tiling and merging to avoid gpu VRAM limitation
-- [x] Resize image/video before AI upscaling
-- [x] Interpolation between the original and upscaled image/video
-- [x] Multiple Gpu support
-- [x] Compatible images - png, jpeg, bmp, webp, tif  
-- [x] Compatible video  - mp4, wemb, gif, mkv, flv, avi, mov, qt 
+- [x] Elegant and easy to use GUI
+- [x] Image and Video upscale
+- [x] Multiple GPUs support
+- [x] Compatible images - jpg, png, tif, bmp, webp, heic
+- [x] Compatible video - mp4, wemb, mkv, flv, gif, avi, mov, mpg, qt, 3gp
+- [x] Automatic image tilling to avoid gpu VRAM limitation
+- [x] Resize image/video before upscaling
+- [x] Interpolation beetween original file and upscaled file
+- [x] Video upscaling STOP&RESUME
+- [x] PRIVACY FOCUSED - no internet connection required / everything is on your PC
 
 ## Next steps. 🤫
 - [x] 1.X versions
@@ -71,7 +96,7 @@ External packages are:
     - [x] Optimizing video frame resize and extraction speed
     - [x] Multi GPU support (for pc with double GPU, integrated + dedicated)
     - [x] Python 3.10 (expecting ~10% more performance)
-- [ ] 2.X versions
+- [x] 2.X versions
     - [x] New, completely redesigned graphical interface based on @customtkinter
     - [x] Upscaling images and videos at once (currently it is possible to upscale images or single video)
     - [x] Upscale multiple videos at once
@@ -81,12 +106,15 @@ External packages are:
     - [x] Show the remaining time to complete video upscaling
     - [x] Support for SRVGGNetCompact AI architecture
     - [x] Metadata extraction and application from original file to upscaled file (via exiftool)
-    - [x] Support for SAFMN AI architecture
-    - [ ] Python 3.11 (expecting ~30% better performance)
-    - [ ] torch/torch-directml 2.0 (expecting ~20% better performance)
 - [ ] 3.X versions
-    - [ ] Python 3.12
-    - [ ] torch/torch-directml 2.1 
+    - [x] New AI engine powered by onnxruntime-directml (https://github.com/microsoft/onnxruntime))
+    - [x] Python 3.11 (performance improvements)
+    - [x] Python 3.12 (performance improvements)
+    - [x] Display images/videos upscaled resolution in the GUI
+    - [x] Updated FFMPEG to version 7.x (latest release)
+    - [x] Saving user settings (AI model, GPU, CPU  etc.)
+    - [x] Video multi-threading AI upscale 
+    - [x] Video upscaling STOP&RESUME
 
 ## Some Example.
 
